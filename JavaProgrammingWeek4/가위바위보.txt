@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Java {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		String str[]= {"가위","바위","보"};
+		String UserSelect, ComSelect;
+		int n =(int)(Math.random()*3);
+		
+		System.out.println("컴퓨터와 가위 바위 보 게임을 합니다.");
+		
+		while(true) {
+			System.out.print("가위 바위 보!>>");
+			UserSelect = scanner.next();
+			
+			ComSelect = str[n];
+			if(UserSelect.equals("그만")) {
+				System.out.println("게임을 종료합니다.");
+				break;
+			}
+			if(UserSelect.equals("가위")) {
+				if(ComSelect.equals("가위")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 비겼습니다");
+					continue;
+				}
+				else if (ComSelect.equals("바위")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 사용자가 졌습니다");
+					continue;
+				}
+				else if (ComSelect.equals("보")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 사용자가 이겼습니다");
+					continue;
+				}
+			}
+			if(UserSelect.equals("바위")) {
+				if(ComSelect.equals("가위")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 사용자가 이겼습니다");
+					continue;
+				}
+				else if (ComSelect.equals("바위")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 비겼습니다");
+					continue;
+				}
+				else if (ComSelect.equals("보")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 사용자가 졌습니다");
+					continue;
+				}
+			}
+			if(UserSelect.equals("보")) {
+				if(ComSelect.equals("가위")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 사용자가 졌습니다");
+					continue;
+				}
+				else if (ComSelect.equals("바위")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 사용자가 이겼습니다");
+					continue;
+				}
+				else if (ComSelect.equals("보")) {
+					System.out.println("사용자 = "+UserSelect+" , 컴퓨터 = "+ComSelect+" , 비겼습니다");
+					continue;
+				}
+			}
+		}
+		scanner.close();
+}
+}
